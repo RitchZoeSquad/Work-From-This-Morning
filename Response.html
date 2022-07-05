@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en
+
+<link rel="stylesheet" href="Response.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Print Response From Api get request</title>
+    
+</head>
+
+<body>
+
+    <button id="btn">Get Response</button>
+    <div id="response"></div>
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://prompts.riku.ai/webhook/run', true);
+          
+            xhr.setRequestHeader('Content-type', 'application/json'); //set header for the request
+            xhr.send(JSON.stringify({
+                "data": {
+                    "Name": "?",
+                    "Secret": "?",
+                    "Prompt ID": "1648599202269x693769025531412500",
+                    "Input 1": "Fetch For api Data using javascript",
+                    "n": 4
+                  
+                }
+            }));
+            xhr.onload = function(){
+                if(this.status == 200){
+                    var response = JSON.parse(this.responseText);
+                    var output = '';
+                   
+                    output += '<h1>' + response.data.Name + '</h1>';
+                    output += '<h2>' + response.data.Secret + '</h2>';
+                    output += '<h3>' + response.data.Prompt ID + '</h3>';
+                    output += '<h4>' + response.data.Input 1 + '</h4>';
+                    output += '<h5>' + response.data.n + '</h5>';
+
+                    document.getElementById('response').innerHTML = output;
+                }
+            }
+            xhr.send();
+        });
+    </script>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" onsubmit data-target="#exampleModal">
+<!-- Print Response From Api get request using javascript --></body>
+    
+   
+    
+   
+
+
+    </title>
+</head>
