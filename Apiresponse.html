@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https:/bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--USE "data": {
+    "Name": "?",
+    "Secret": "?",
+    "Prompt ID": "1648599202269x693769025531412500",
+    "Input 1": "Fetch For api Data using javascript",
+    "n": 4
+}>-->
+
+   <title>Welcome To Zoesquad</title> <!--title of the page-->
+   <script>
+
+
+    fetch('https://example.com/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            'Name': '?',
+            'Secret': '?',
+            "Prompt ID": '1648599202269x693769025531412500',
+            'Input 1': 'Fetch For api Data using javascript',
+            'n': 4
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          // Do some stuff ...
+        })
+        .catch((err) => console.log(err));
+   </script>
+   Create a button that fetches an api using the fetch function above 
+    <button type="button" class="btn btn-primary" data-toggle="modal" onsubmit data-target="#exampleModal">
+   
+
+
+
+<button id="btn">Get Response</button>
+<div id="response"></div>
+
+
+
+
+</html>
